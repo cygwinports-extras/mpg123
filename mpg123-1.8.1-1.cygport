@@ -1,0 +1,18 @@
+DESCRIPTION="Command-line MPEG audio player"
+HOMEPAGE="http://www.mpg123.de/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+
+PKG_NAMES="${PN} lib${PN}_0 lib${PN}-devel"
+mpg123_CONTENTS="usr/bin/*.exe usr/lib/${PN}/ usr/share/"
+libmpg123_0_CONTENTS="usr/bin/cygmpg123-0.dll"
+libmpg123_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
+
+# --with-optimization adds -ffast-math, segfaults (-fno-common doesn't help)
+CFLAGS+=" -fomit-frame-pointer -funroll-all-loops -finline-functions"
+
+# additional --with-audio: arts,esd,nas,portaudio,sdl
+CYGCONF_ARGS="
+	--with-audio=dummy,oss,win32
+	--with-default-audio=win32
+	--with-optimization=0
+"

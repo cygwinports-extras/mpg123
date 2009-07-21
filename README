@@ -1,0 +1,84 @@
+mpg123
+------------------------------------------
+mpg123 is a cross-platform, real time MPEG 1.0/2.0/2.5 audio 
+player/decoder for layers 1,2 and 3 (MPEG 1.0 layer 3 aka MP3 most 
+commonly tested).
+
+Runtime requirements:
+  cygwin-1.7.0-51
+  libgcc1-4.3.2-2
+  libltdl7-2.2.7a-14
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf2.5-2.63-10
+  automake1.10-1.10.2-10
+  binutils-2.19.51-1
+  cygport-0.9.7-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  libtool-2.2.7a-14
+  make-3.81-2
+  pkg-config-0.23b-10
+  sed-4.1.5-2
+
+Canonical website:
+  http://www.mpg123.de/
+
+Canonical download:
+  http://sourceforge.net/projects/mpg123/files
+
+-------------------------------------------
+
+Build instructions:
+  unpack mpg123-1.8.1-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./mpg123-1.8.1-X.cygport all
+
+This will create:
+  /usr/src/libmpg123-devel-1.8.1-X.tar.bz2
+  /usr/src/libmpg123_0-1.8.1-X.tar.bz2
+  /usr/src/mpg123-1.8.1-X-src.tar.bz2
+  /usr/src/mpg123-1.8.1-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(mpg123)
+  /usr/bin/mpg123.exe
+  /usr/lib/mpg123/output_dummy.dll
+  /usr/lib/mpg123/output_dummy.la
+  /usr/lib/mpg123/output_oss.dll
+  /usr/lib/mpg123/output_oss.la
+  /usr/lib/mpg123/output_win32.dll
+  /usr/lib/mpg123/output_win32.la
+  /usr/share/doc/mpg123/AUTHORS
+  /usr/share/doc/mpg123/COPYING
+  /usr/share/doc/mpg123/ChangeLog
+  /usr/share/doc/mpg123/NEWS
+  /usr/share/doc/mpg123/README
+  /usr/share/doc/mpg123/TODO
+  /usr/share/man/man1/mpg123.1.gz
+
+(libmpg123_0)
+  /usr/bin/cygmpg123-0.dll
+
+(libmpg123-devel)
+  /usr/include/mpg123.h
+  /usr/lib/libmpg123.dll.a
+  /usr/lib/libmpg123.la
+  /usr/lib/pkgconfig/libmpg123.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.8.1-1 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/

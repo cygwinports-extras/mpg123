@@ -1,0 +1,7 @@
+category: Audio
+requires: libgcc1
+external-source: mpg123
+sdesc: "MPEG audio decoder library (runtime)"
+ldesc: "mpg123 is a cross-platform, real time MPEG 1.0/2.0/2.5 audio
+player/decoder for layers 1,2 and 3 (MPEG 1.0 layer 3 aka MP3 most
+commonly tested)."
