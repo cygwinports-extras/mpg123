@@ -5,16 +5,16 @@ player/decoder for layers 1,2 and 3 (MPEG 1.0 layer 3 aka MP3 most
 commonly tested).
 
 Runtime requirements:
-  cygwin-1.7.0-51
+  cygwin-1.7.0-60
   libgcc1-4.3.2-2
   libltdl7-2.2.7a-14
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.63-10
+  autoconf2.5-2.64-10
   automake1.10-1.10.2-10
   binutils-2.19.51-1
-  cygport-0.9.7-1
+  cygport-0.9.9-1
   gawk-3.1.6-2
   gcc4-core-4.3.2-2
   libtool-2.2.7a-14
@@ -31,17 +31,17 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack mpg123-1.8.1-X-src.tar.bz2
+  unpack mpg123-1.9.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./mpg123-1.8.1-X.cygport all
+  cygport ./mpg123-1.9.0-X.cygport all
 
 This will create:
-  /usr/src/libmpg123-devel-1.8.1-X.tar.bz2
-  /usr/src/libmpg123_0-1.8.1-X.tar.bz2
-  /usr/src/mpg123-1.8.1-X-src.tar.bz2
-  /usr/src/mpg123-1.8.1-X.tar.bz2
+  /usr/src/libmpg123-devel-1.9.0-X.tar.bz2
+  /usr/src/libmpg123_0-1.9.0-X.tar.bz2
+  /usr/src/mpg123-1.9.0-X-src.tar.bz2
+  /usr/src/mpg123-1.9.0-X.tar.bz2
 
 -------------------------------------------
 
@@ -75,6 +75,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 1.9.0-1 -----
+Version bump.
 
 ----- version 1.8.1-1 -----
 Initial release for Cygwin 1.7.
