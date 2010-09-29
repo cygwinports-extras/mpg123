@@ -9,12 +9,10 @@ libmpg123_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
 
 DIFF_EXCLUDES="libmpg123.sym"
 
-# --with-optimization adds -ffast-math, segfaults (-fno-common doesn't help)
-CFLAGS+=" -fomit-frame-pointer -funroll-all-loops -finline-functions"
-
 # additional --with-audio: arts,esd,nas,portaudio,sdl
 CYGCONF_ARGS="
 	--with-audio=dummy,oss,win32
+	--with-cpu=sse
 	--with-default-audio=win32
-	--with-optimization=0
+	--with-optimization=2
 "
