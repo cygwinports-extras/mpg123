@@ -9,9 +9,8 @@ libmpg123_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
 
 DIFF_EXCLUDES="libmpg123.sym"
 
-# additional --with-audio: arts,esd,nas,portaudio,sdl
 CYGCONF_ARGS="
-	--with-audio=dummy,oss,win32
+	--with-audio=dummy,nas,oss,portaudio,sdl,win32
 	--with-cpu=sse
 	--with-default-audio=win32
 	--with-optimization=2
