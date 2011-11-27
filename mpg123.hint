@@ -1,5 +1,5 @@
 category: Audio
-requires: libaudio2 libgcc1 libltdl7 libmpg123_0 libportaudio2 libSDL1.2_0
+requires: libltdl7 libmpg123_0
 sdesc: "Command-line MPEG audio player"
 ldesc: "mpg123 is a cross-platform, real time MPEG 1.0/2.0/2.5 audio
 player/decoder for layers 1,2 and 3 (MPEG 1.0 layer 3 aka MP3 most
