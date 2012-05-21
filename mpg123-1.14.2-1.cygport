@@ -13,5 +13,8 @@ CYGCONF_ARGS="
 	--with-audio=dummy,nas,oss,pulse,win32
 	--with-cpu=sse
 	--with-default-audio=win32
+	--with-module-suffix=.dll
 	--with-optimization=2
 "
+
+KEEP_LA_FILES="none"
