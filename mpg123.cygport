@@ -1,17 +1,20 @@
+NAME="mpg123"
+VERSION=1.14.4
+RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Command-line MPEG audio player"
 DESCRIPTION="mpg123 is a cross-platform, real time MPEG 1.0/2.0/2.5 audio
 player/decoder for layers 1,2 and 3 (MPEG 1.0 layer 3 aka MP3 most
 commonly tested)."
 HOMEPAGE="http://www.mpg123.de/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/mpg123/mpg123-${VERSION}.tar.bz2"
 
-PKG_NAMES="${PN} ${PN}-nas ${PN}-pulse lib${PN}_0 lib${PN}-devel"
+PKG_NAMES="mpg123 mpg123-nas mpg123-pulse libmpg123_0 libmpg123-devel"
 mpg123_CONTENTS="--exclude=output_nas.* --exclude=output_pulse.*
-                 usr/bin/*.exe usr/lib/${PN}/ usr/share/"
-mpg123_nas_SUMMARY="NAS output plugin for ${PN} audio player"
+                 usr/bin/*.exe usr/lib/mpg123/ usr/share/"
+mpg123_nas_SUMMARY="NAS output plugin for mpg123 audio player"
 mpg123_nas_CONTENTS="usr/lib/mpg123/output_nas.dll"
-mpg123_pulse_SUMMARY="PulseAudio output plugin for ${PN} audio player"
+mpg123_pulse_SUMMARY="PulseAudio output plugin for mpg123 audio player"
 mpg123_pulse_CONTENTS="usr/lib/mpg123/output_pulse.dll"
 libmpg123_0_SUMMARY="MPEG audio decoder library (runtime)"
 libmpg123_0_CONTENTS="usr/bin/cygmpg123-0.dll"
