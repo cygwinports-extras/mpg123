@@ -1,5 +1,5 @@
 NAME="mpg123"
-VERSION=1.14.4
+VERSION=1.15.4
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Command-line MPEG audio player"
@@ -8,16 +8,21 @@ player/decoder for layers 1,2 and 3 (MPEG 1.0 layer 3 aka MP3 most
 commonly tested)."
 HOMEPAGE="http://www.mpg123.de/"
 SRC_URI="mirror://sourceforge/mpg123/mpg123-${VERSION}.tar.bz2"
+PATCH_URI="1.15.4-cygwin64.patch"
 
 PKG_NAMES="mpg123 mpg123-nas mpg123-pulse libmpg123_0 libmpg123-devel"
 mpg123_CONTENTS="--exclude=output_nas.* --exclude=output_pulse.*
                  usr/bin/*.exe usr/lib/mpg123/ usr/share/"
 mpg123_nas_SUMMARY="NAS output plugin for mpg123 audio player"
+mpg123_nas_REQUIRES=${NAME}
 mpg123_nas_CONTENTS="usr/lib/mpg123/output_nas.dll"
 mpg123_pulse_SUMMARY="PulseAudio output plugin for mpg123 audio player"
+mpg123_pulse_REQUIRES=${NAME}
 mpg123_pulse_CONTENTS="usr/lib/mpg123/output_pulse.dll"
+libmpg123_0_CATEGORY="Libs"
 libmpg123_0_SUMMARY="MPEG audio decoder library (runtime)"
 libmpg123_0_CONTENTS="usr/bin/cygmpg123-0.dll"
+libmpg123_devel_CATEGORY="Libs"
 libmpg123_devel_SUMMARY="MPEG audio decoder library (development)"
 libmpg123_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
 
@@ -25,7 +30,7 @@ DIFF_EXCLUDES="libmpg123.sym"
 
 CYGCONF_ARGS="
 	--with-audio=dummy,nas,oss,pulse,win32
-	--with-cpu=sse
+	--with-cpu=x86${ARCH_x86_64+-64}
 	--with-default-audio=win32
 	--with-module-suffix=.dll
 	--with-optimization=2
