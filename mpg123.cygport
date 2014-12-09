@@ -1,5 +1,5 @@
 NAME="mpg123"
-VERSION=1.15.4
+VERSION=1.21.0
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Command-line MPEG audio player"
