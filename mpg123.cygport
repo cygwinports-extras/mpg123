@@ -1,5 +1,5 @@
 NAME="mpg123"
-VERSION=1.21.0
+VERSION=1.23.1
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Command-line MPEG audio player"
@@ -10,21 +10,30 @@ HOMEPAGE="http://www.mpg123.de/"
 SRC_URI="mirror://sourceforge/mpg123/mpg123-${VERSION}.tar.bz2"
 PATCH_URI="1.15.4-cygwin64.patch"
 
-PKG_NAMES="mpg123 mpg123-nas mpg123-pulse libmpg123_0 libmpg123-devel"
-mpg123_CONTENTS="--exclude=output_nas.* --exclude=output_pulse.*
-                 usr/bin/*.exe usr/lib/mpg123/ usr/share/"
-mpg123_nas_SUMMARY="NAS output plugin for mpg123 audio player"
-mpg123_nas_REQUIRES=${NAME}
-mpg123_nas_CONTENTS="usr/lib/mpg123/output_nas.dll"
-mpg123_pulse_SUMMARY="PulseAudio output plugin for mpg123 audio player"
-mpg123_pulse_REQUIRES=${NAME}
-mpg123_pulse_CONTENTS="usr/lib/mpg123/output_pulse.dll"
+PKG_NAMES="mpg123 libmpg123_0 libmpg123-devel libout123_0 libout123-devel"
+mpg123_CONTENTS="usr/bin/*.exe usr/share/"
 libmpg123_0_CATEGORY="Libs"
 libmpg123_0_SUMMARY="MPEG audio decoder library (runtime)"
 libmpg123_0_CONTENTS="usr/bin/cygmpg123-0.dll"
 libmpg123_devel_CATEGORY="Libs"
 libmpg123_devel_SUMMARY="MPEG audio decoder library (development)"
-libmpg123_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
+libmpg123_devel_CONTENTS="
+	usr/include/fmt123.h
+	usr/include/mpg123.h
+	usr/lib/libmpg123.dll.a
+	usr/lib/pkgconfig/libmpg123.pc
+"
+libout123_0_CATEGORY="Libs"
+libout123_0_SUMMARY="MPG123 audio interface library (runtime)"
+libout123_0_OBSOLETES="mpg123-nas mpg123-pulse"
+libout123_0_CONTENTS="usr/bin/cygout123-0.dll usr/lib/mpg123/"
+libout123_devel_CATEGORY="Libs"
+libout123_devel_SUMMARY="MPG123 audio interface library (development)"
+libout123_devel_CONTENTS="
+	usr/include/out123.h
+	usr/lib/libout123.dll.a
+	usr/lib/pkgconfig/libout123.pc
+"
 
 DIFF_EXCLUDES="libmpg123.sym"
 
