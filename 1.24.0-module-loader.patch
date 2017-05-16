@@ -1,0 +1,13 @@
+We need windows.h for WaveOut, but we want to use dlfcn for loading
+
+--- origsrc/mpg123-1.24.0/configure.ac	2017-03-02 01:52:18.000000000 -0600
++++ src/mpg123-1.24.0/configure.ac	2017-05-16 12:28:04.328082800 -0500
+@@ -143,7 +143,7 @@ then
+ else
+   have_dl=no
+   # The dlopen() API is either in libc or in libdl.
+-  if test x$ac_cv_header_windows_h = xyes; then
++  if test x$ac_cv_header_windows_h = xnotoncygwin; then
+     AC_MSG_CHECKING([if LoadLibrary should be used])
+     AC_LINK_IFELSE([AC_LANG_SOURCE([
+ 

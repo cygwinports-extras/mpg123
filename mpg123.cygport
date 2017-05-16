@@ -1,5 +1,5 @@
 NAME="mpg123"
-VERSION=1.23.8
+VERSION=1.24.0
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Command-line MPEG audio player"
@@ -8,7 +8,10 @@ player/decoder for layers 1,2 and 3 (MPEG 1.0 layer 3 aka MP3 most
 commonly tested)."
 HOMEPAGE="http://www.mpg123.de/"
 SRC_URI="mirror://sourceforge/mpg123/mpg123-${VERSION}.tar.bz2"
-PATCH_URI="1.15.4-cygwin64.patch"
+PATCH_URI="
+	1.15.4-cygwin64.patch
+	1.24.0-module-loader.patch
+"
 
 PKG_NAMES="mpg123 mpg123-pulse
 	   libmpg123_0 libmpg123-devel libout123_0 libout123-devel"
@@ -41,15 +44,14 @@ libout123_devel_CONTENTS="
 	usr/lib/libout123.dll.a
 	usr/lib/pkgconfig/libout123.pc
 "
+PKG_IGNORE="usr/lib/mpg123/*.dll.a"
 
 DIFF_EXCLUDES="libmpg123.sym"
 
 CYGCONF_ARGS="
+	--enable-modules
 	--with-audio=dummy,oss,pulse,win32
 	--with-cpu=x86${ARCH_x86_64+-64}
 	--with-default-audio=win32
-	--with-module-suffix=.dll
 	--with-optimization=2
 "
-
-KEEP_LA_FILES="none"
